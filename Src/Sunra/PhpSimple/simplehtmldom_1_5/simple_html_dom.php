@@ -484,6 +484,21 @@ class simple_html_dom_node
             if ($val===null || $val===false)
                 continue;
 
+            if (!isset($this->_[HDOM_INFO_SPACE][$i]))
+                $this->_[HDOM_INFO_SPACE][$i] = array();
+            
+            if (!isset($this->_[HDOM_INFO_SPACE][$i][0]))
+                $this->_[HDOM_INFO_SPACE][$i][0] = "";
+            
+            if (!isset($this->_[HDOM_INFO_SPACE][$i][1]))
+                $this->_[HDOM_INFO_SPACE][$i][1] = "";
+
+            if (!isset($this->_[HDOM_INFO_SPACE][$i][2]))
+                $this->_[HDOM_INFO_SPACE][$i][2] = "";            
+            
+            if (!isset($this->_[HDOM_INFO_QUOTE][$i]))
+                $this->_[HDOM_INFO_QUOTE][$i] = "";
+
             $ret .= $this->_[HDOM_INFO_SPACE][$i][0];
             //no value attr: nowrap, checked selected...
             if ($val===true)
